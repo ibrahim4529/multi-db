@@ -1,0 +1,26 @@
+version: '3.8'
+
+
+services:
+  mysql_server:
+    image: mysql
+    container_name: mysql_server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db1
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - 3306:3306
+
+  postgres_server:
+    image: postgres:12.2
+    container_name: postgres_server
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: db2
+    ports:
+      - 5432:5432
